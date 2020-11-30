@@ -1,0 +1,26 @@
+{
+  "name": "uce-tests",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ucdn --source src --debug",
+    "build": "ucompress --source ./src --dest ./public --with-source-map"
+  },
+  "keywords": [],
+  "author": "Bret Comnes <bcomnes@gmail.com> (https://bret.io/)",
+  "license": "MIT",
+  "dependencies": {
+    "@ungap/custom-elements": "^0.1.6",
+    "augmentor": "^2.2.0",
+    "uce": "^1.11.9",
+    "uce-lib": "^1.0.0",
+    "uce-loader": "^1.0.1",
+    "uland": "^0.3.2"
+  },
+  "devDependencies": {
+    "standard": "^15.0.0",
+    "ucdn": "^0.21.3",
+    "ucompress": "^0.21.2"
+  }
+}

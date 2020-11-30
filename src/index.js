@@ -1,19 +1,21 @@
-import { Component, useState, useEffect, render, html } from 'uland'
+import { Component, useState, useEffect, render, html } from 'uland';
 
 const MyComp = Component(function MyComp () {
-  const [state, setState] = useState(false)
+  const [state, setState] = useState(false);
 
   function flipTrue (ev) {
-    ev.preventDefault()
+    ev.preventDefault();
 
-    setState(true)
+    setState(true);
   }
 
   function flipFalse (ev) {
-    ev.preventDefault()
+    ev.preventDefault();
 
-    setState(false)
+    setState(false);
   }
+
+  console.log(state);
 
   if (state) {
     return html`
@@ -21,7 +23,7 @@ const MyComp = Component(function MyComp () {
         <div>hello uland (true)</div>
         <button onclick="${flipFalse}">change state</button>
       </div>
-    `
+    `;
   }
 
   if (!state) {
@@ -30,10 +32,10 @@ const MyComp = Component(function MyComp () {
         <div>hello uland (false)</div>
         <button onclick=${flipTrue}>change state</button>
       </div>
-    `
+    `;
   }
-})
+});
 
 render(document.querySelector('.app'), html`
   ${MyComp()}
-`)
+`);

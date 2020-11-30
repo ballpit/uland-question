@@ -19,7 +19,6 @@
     "uland": "^0.3.2"
   },
   "devDependencies": {
-    "standard": "^15.0.0",
     "ucdn": "^0.21.3",
     "ucompress": "^0.21.2"
   }

@@ -1,12 +1,39 @@
-import '@ungap/custom-elements'
-import 'uce'
-import loader from 'uce-loader'
+import { Component, useState, useEffect, render, html } from 'uland'
 
-loader({
-  on (newTag) {
-    var js = document.createElement('script')
-    js.src = '/js/components/' + newTag + '.js'
-    js.type = 'module'
-    document.head.appendChild(js)
+const MyComp = Component(function MyComp () {
+  const [state, setState] = useState(false)
+
+  function flipTrue (ev) {
+    ev.preventDefault()
+
+    setState(true)
+  }
+
+  function flipFalse (ev) {
+    ev.preventDefault()
+
+    setState(false)
+  }
+
+  if (state) {
+    return html`
+      <div>
+        <div>hello uland (true)</div>
+        <button onclick="${flipFalse}">change state</button>
+      </div>
+    `
+  }
+
+  if (!state) {
+    return html`
+      <div>
+        <div>hello uland (false)</div>
+        <button onclick=${flipTrue}>change state</button>
+      </div>
+    `
   }
 })
+
+render(document.querySelector('.app'), html`
+  ${MyComp()}
+`)
